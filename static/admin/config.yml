@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+  
+# Hide preview panel in editor 
+editor:
+  preview: true
+
+# Editorial workflow
+# publish_mode: editorial_workflow
+# squash_merges: true
+# Ref:  - https://www.netlifycms.org/docs/configuration-options/#publish-mode
+#       - https://www.netlifycms.org/docs/beta-features/
+#       - https://www.netlifycms.org/docs/beta-features/#squash-merge-github-pull-requests
+
+media_folder: "../../static/images"
+public_folder: "/images"
+# To limit file size, see https://www.netlifycms.org/docs/beta-features/#image-widget-file-size-limit
+
+locale: 'fr'
+
+localbackend: true
+
+collections:
+  - name: "posts"
+    # A collection-specific media folder
+    media_folder: ''
+    public_folder: ''
+    label: "Articles"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    encoding: "ascii"
+    clean_accents: true
+    sanitize_replacement: "-"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Titre", name: "title", widget: "string"}
+      # Not required when editorial_workflow is activated (and hides the Deploy preview link)
+      # - {label: "Brouillon", name: "draft",  widget: "boolean", default: true}
+      - {label: "Date de publication", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Article", name: "body", widget: "markdown"}
+      # - {label: "Gallery",
+      #     name: "galleryImages",
+      #     widget: "list",
+      #     summary: '{{fields.image}}',
+      #     field: {label: Image, name: image, widget: image}
+      # }

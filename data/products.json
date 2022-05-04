@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Sucre",
+        "price": 34.87,
+        "step": 100,
+        "image": "/images/dictionary.jpg",
+        "description": "idk",
+        "url": "http://snipcart-hugo.netlify.com"
+    },
+    {
+        "id": "2",
+        "name": "Farine",
+        "description": "idk",
+        "price": 145.98,
+        "step": 100,
+        "image": "/images/phaser.png",
+        "url": "http://snipcart-hugo.netlify.com"
+    }
+]
